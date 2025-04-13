@@ -1,15 +1,5 @@
 console.log("Website script loaded!");
 
-// Get references to the sections (optional, but shows TS usage)
-// const photographySection: HTMLElement | null = document.getElementById('photography');
-// const portfolioSection: HTMLElement | null = document.getElementById('portfolio');
-
-// if (photographySection && portfolioSection) {
-//     console.log("Found both sections!");
-//     // You could add event listeners or other dynamic behavior here later
-//     // e.g., photographySection.addEventListener('click', () => console.log('Clicked Photo Section'));
-// }
-
 // --- Modal Functionality ---
 
 // Get references to the elements
@@ -20,7 +10,6 @@ const closeContactModalBtn = document.getElementById('closeContactModal') as HTM
 // Function to open the modal
 function openModal(): void {
     if (contactModal) {
-        // contactModal.style.display = 'flex'; // Or 'block' if not using flex for centering
         contactModal.classList.add('modal-active'); // Add class to show modal
     }
 }
