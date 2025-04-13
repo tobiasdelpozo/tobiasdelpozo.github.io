@@ -1,14 +1,14 @@
 console.log("Website script loaded!");
 
 // Get references to the sections (optional, but shows TS usage)
-const photographySection: HTMLElement | null = document.getElementById('photography');
-const portfolioSection: HTMLElement | null = document.getElementById('portfolio');
+// const photographySection: HTMLElement | null = document.getElementById('photography');
+// const portfolioSection: HTMLElement | null = document.getElementById('portfolio');
 
-if (photographySection && portfolioSection) {
-    console.log("Found both sections!");
-    // You could add event listeners or other dynamic behavior here later
-    // e.g., photographySection.addEventListener('click', () => console.log('Clicked Photo Section'));
-}
+// if (photographySection && portfolioSection) {
+//     console.log("Found both sections!");
+//     // You could add event listeners or other dynamic behavior here later
+//     // e.g., photographySection.addEventListener('click', () => console.log('Clicked Photo Section'));
+// }
 
 // --- Modal Functionality ---
 
