@@ -1,4 +1,3 @@
-"use strict";
 console.log("Website script loaded!");
 // Get references to the sections (optional, but shows TS usage)
 const photographySection = document.getElementById('photography');
