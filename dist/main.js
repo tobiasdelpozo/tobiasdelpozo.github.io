@@ -1,3 +1,4 @@
+"use strict";
 console.log("Website script loaded!");
 // Get references to the sections (optional, but shows TS usage)
 const photographySection = document.getElementById('photography');
@@ -173,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         gutter: 10
                     });
                     console.log("initialized masonry");
+                    setTimeout(() => masonry.layout(), 100);
                 });
             }
             else {
