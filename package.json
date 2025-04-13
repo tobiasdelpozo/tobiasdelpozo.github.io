@@ -19,6 +19,7 @@
   "bugs": {
     "url": "https://github.com/tobiasdelpozo/photography-website/issues"
   },
+  "private": false,
   "homepage": "https://tobiasdelpozo.github.io/",
   "description": "",
   "devDependencies": {
