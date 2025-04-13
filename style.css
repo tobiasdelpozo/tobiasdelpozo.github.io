@@ -1,0 +1,473 @@
+/* Basic Reset & Body Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* Split Container - Using Flexbox (Outer Layout)*/
+.split-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Individual Sections (Now act as flex containers for their content) */
+.split-section {
+    flex: 1;
+    padding: 40px; /* Keep padding */
+    display: flex;
+    flex-direction: column; /* <-- Change to stack children vertically */
+    align-items: center;   /* <-- Center items horizontally within the column */
+                           /* Or use 'flex-start' to align left, 'stretch' to fill width */
+    gap: 25px; /* <-- Adjust vertical gap between image and text block */
+    /* Remove justify-content or set to flex-start if needed */
+    /* justify-content: space-evenly; */ /* Likely remove this */
+}
+
+/* Section Specific Backgrounds (Example) */
+#photography {
+    background-color: #f4f4f4;
+}
+
+#portfolio {
+    background-color: #e2e2e2;
+}
+
+/* Style the links within the Portfolio section content */
+#portfolio .section-content a,
+#portfolio .section-content a:visited { /* Apply to both unvisited and visited links */
+    color: black;                 /* Set the text color to black */
+    text-decoration: underline;  /* Ensure the links are underlined */
+}
+
+/* Optional: You might also want to define a hover style */
+#portfolio .section-content a:hover {
+   color: #555; /* Example: Dark grey on hover */
+   text-decoration: none; /* Example: Remove underline on hover */
+}
+
+/* Reduce vertical margins for the link paragraphs in the Portfolio section */
+#portfolio .section-content p {
+    margin-top: 0.3em;     /* Reduce space above the paragraph */
+    margin-bottom: 0.3em;  /* Reduce space below the paragraph */
+    /* Adjust the '0.3em' value up or down (e.g., 0.5em, 5px, 0) */
+    /* until you get the spacing you like. */
+}
+
+/* Styling for the Image within a section */
+.section-image {
+    /* Adjust width for vertical layout */
+    max-width: 70%; /* Or a fixed value like 600px, adjust as needed */
+    width: 75%; /* Allow it to shrink if needed */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* margin-bottom removed if using gap on parent */
+}
+
+/* Styling for the Text Content Container */
+.section-content {
+   /* Adjust width for vertical layout */
+   max-width: 85%; /* Match image or set as needed */
+   width: 100%; /* Allow it to use available space up to max-width */
+   text-align: left; /* Keep text left-aligned */
+}
+
+/* ==== MODIFIED: Site Header Styling ==== */
+.site-header {
+    background-color: #f8f8f8;
+    padding: 10px 30px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    /* Change justify-content to space items out */
+    justify-content: space-between; /* <-- MODIFIED */
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==== NEW: Header Left Container ==== */
+.header-left {
+    display: flex; /* Align icon and dropdown horizontally */
+    align-items: center;
+    gap: 25px; /* Space between icon and dropdown */
+}
+
+/* ==== NEW: Home Icon Link Styling ==== */
+.home-icon-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use default text color */
+    font-size: 1.6em; /* Adjust icon size */
+    line-height: 1; /* Prevent extra line height */
+}
+
+/* ==== NEW: Dropdown Menu Styling ==== */
+.dropdown {
+    position: relative; /* Allows absolute positioning of content */
+    display: inline-block; /* Keep elements inline */
+}
+
+
+
+
+/* MODIFIED: Dropdown Toggle Button (now icon only) */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 5px; /* Adjust padding around icon */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    /* Remove flex stuff if it was added for text+icon */
+    /* display: inline-flex; */
+    /* align-items: center; */
+    /* gap: 8px; */
+    line-height: 0; /* Helps contain the icon better */
+}
+/* Optional: Specific class if needed */
+.icon-button:hover {
+     background-color: #e0e0e0;
+}
+
+
+/* Dropdown Icon - Adjust size maybe */
+.dropdown-icon {
+    width: 2em;  /* Example: slightly larger icon */
+    height: 2em; /* Example: slightly larger icon */
+    display: block; /* Make it block to fill the line-height:0 button */
+}
+
+/* ==== Gallery Page Specific Styles ==== */
+
+/* Optional container for gallery content */
+.gallery-container {
+    max-width: 1200px; /* Or your preferred max width */
+    margin: 20px auto; /* Center container */
+    padding: 20px; /* Padding on sides */
+}
+
+/* Gallery Header */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.gallery-info-left .location {
+    font-weight: bold;
+}
+
+/* Image Grid */
+/* In your style.css file */
+
+.image-grid {
+    /* Remove grid-template-columns and gap here, Masonry will handle the layout */
+    /* display: block; Or you might not need to change this */
+    /* padding: 20px; */
+    margin: 0 auto;
+}
+
+.image-grid img {
+    /* Update calc to use the new gutter value (20px) */
+    width: calc((100% - 1.5em) / 2); /* <-- UPDATED GUTTER */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 1%;
+    /* margin-bottom: 1%; */ /* Keep this removed */
+}
+
+@media (max-width: 600px) { /* Adjust this breakpoint as needed */
+    .image-grid img {
+        /* Override width for single column */
+        /* width: 100%; */
+        /* You might slightly reduce horizontal gutter effect visually if needed */
+        width: calc(100% - 10px);
+    }
+}
+
+
+
+
+.image-grid img:hover {
+    /* Reduce the scale value */
+    transform: scale(1.01); /* <-- REDUCED SCALE (try 1.01, 1.015, or 1.02) */
+    /* Keep the subtle shadow */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    /* Ensure the scaled image doesn't get clipped if needed */
+    /* position: relative; */ /* Usually not needed */
+    /* z-index: 2; */ /* Bring slightly forward - helps if borders overlap */
+}
+
+/* Lightbox Overlay */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1050; /* Higher than header/contact modal */
+    padding-top: 60px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+    /* Use flex to easily center image later if needed, but simple centering works too */
+}
+
+/* Class added by JS to show lightbox */
+.lightbox.active {
+    display: block; /* Show the lightbox */
+}
+
+/* Lightbox Content (The Image) */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh; /* Limit height relative to viewport */
+    /* Add animations later if desired */
+}
+
+/* Lightbox Caption */
+.lightbox-caption {
+    margin: 15px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+/* Close Button for Lightbox */
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+
+/* MODIFIED: Dropdown Content - Position relative to right */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 1;
+    top: 100%;
+    /* Change left to right */
+    left: auto; /* Remove left alignment */
+    right: 0;   /* Align right edge of dropdown with right edge of container */
+    margin-top: 5px;
+}
+
+.dropdown-content.dropdown-active {
+    display: block;
+}
+
+/* Class added by JS to show dropdown */
+.dropdown-content.dropdown-active {
+    display: block;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Make links take full width */
+    font-size: 0.95em;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Keep other styles (.contact-button, .modal, etc.) */
+
+
+
+/* Headings */
+.section-content h2 {
+    margin-bottom: 15px; /* Space below heading */
+    font-size: 2.2em;
+    color: #1a1a1a; /* Slightly darker heading */
+}
+
+/* Paragraphs */
+.section-content p {
+    font-size: 1em; /* Adjust paragraph font size if needed */
+}
+
+/* Target the first paragraph directly within .section-content */
+.section-content > p:first-of-type {
+    margin-bottom: 1em; /* Increase the space below this paragraph */
+                        /* Default is often ~1em, so 2em adds roughly one line height extra */
+                        /* Adjust this value (e.g., 2.5em, 30px) as needed */
+}
+
+
+/* Responsive Behavior */
+@media (max-width: 900px) { /* Adjust breakpoint as needed */
+    .split-container {
+        flex-direction: column; /* Stack main sections vertically */
+    }
+
+    .split-section {
+         /* When main sections stack, make image/text stack too */
+        flex-direction: column;
+        text-align: center; /* Center text when stacked */
+        min-height: auto; /* Reset min-height if needed */
+        padding: 30px 20px; /* Adjust padding */
+    }
+
+    .section-image {
+        max-width: 70%; /* Allow image to be wider when stacked */
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+
+    .section-content {
+        max-width: 90%; /* Allow text to use more width */
+        text-align: center; /* Center text */
+    }
+
+    .section-content h2 {
+        font-size: 1.8em;
+    }
+}
+
+
+
+/* Optional: Even smaller screens */
+@media (max-width: 480px) {
+    .section-image {
+        max-width: 85%;
+    }
+     .section-content h2 {
+        font-size: 1.6em;
+    }
+     .section-content p {
+        font-size: 0.95em;
+    }
+}
+
+/* Contact Button Styling */
+/* ==== MODIFIED: Contact Button Styling ==== */
+.contact-button {
+    /* REMOVE these lines: */
+    /* position: fixed; */
+    /* top: 20px; */
+    /* right: 20px; */
+    /* z-index: 999; */
+
+    /* KEEP/ADJUST existing styles */
+    padding: 8px 16px; /* Slightly smaller padding might look better in a bar */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em; /* Slightly smaller font might look better */
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #555;
+}
+
+/* This rule MUST have display: none initially */
+.modal {
+    display: none; /* Hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Centering styles */
+    /* display: flex; <-- DO NOT put display:flex here */
+    align-items: center;
+    justify-content: center;
+}
+
+/* This rule makes it visible ONLY when the class is added */
+.modal.modal-active {
+    display: flex; /* Or display: block if not using flex for centering */
+}
+
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Centered */
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative; /* For positioning the close button */
+    text-align: left; /* Ensure text inside aligns left */
+    color: #333; /* Text color inside modal */
+}
+
+.modal-content h2 {
+    margin-top: 0; /* Remove default top margin from h2 */
+    color: #1a1a1a;
+}
+
+.modal-content p {
+    line-height: 1.6;
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
+/* Close Button ('x') */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1; /* Adjust line height for better vertical centering */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

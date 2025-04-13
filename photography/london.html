@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Photography - Your Name</title>
+    <link rel="stylesheet" href="../../style.css"> </head>
+<body>
+
+    <header class="site-header">
+        <div class="header-left">
+            <a href="/" class="home-icon-link" aria-label="Homepage">🏠</a>
+            <button id="contactBtn" class="contact-button">Contact Me</button>
+        </div>
+        <div class="dropdown">
+            <button id="photographyDropdownToggle" class="dropdown-toggle icon-button" aria-label="Toggle photography menu">
+                <img src="../../icons/hamburger.svg" alt="" class="dropdown-icon"> </button>
+            <div id="photographyDropdownContent" class="dropdown-content">
+                <a href="/photography/london.html">London</a>
+                <a href="/photography/edinburgh.html">Edinburgh</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+
+        <div class="gallery-header">
+            <div class="gallery-info-left">
+                <span class="location">London</span>, <span class="date">2021</span>
+            </div>
+            <div class="gallery-info-right">
+                <span class="camera-info">Pentax K1000</span>, <span class="film-info">ColorPlus 200</span>
+            </div>
+        </div>
+
+        <div id="imageGrid" class="image-grid">
+            <p>Loading images...</p> </div>
+
+    </main>
+    <div id="lightbox" class="lightbox">
+        <span id="lightboxClose" class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="Enlarged view">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <script type="application/json" id="galleryData">
+      [
+        { "src": "../../images/london/london_01.jpg"},
+        { "src": "../../images/london/london_02.jpg"},
+        { "src": "../../images/london/london_03.jpg"},
+        { "src": "../../images/london/london_04.jpg"},
+        { "src": "../../images/london/london_05.jpg"},
+        { "src": "../../images/london/london_06.jpg"},
+        { "src": "../../images/london/london_07.jpg"},
+        { "src": "../../images/london/london_08.jpg"}
+      ]
+    </script>
+
+    <div id="contactModal" class="modal">
+       </div>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="../../dist/main.js" defer></script>
+    
+
+</body>
+</html>
