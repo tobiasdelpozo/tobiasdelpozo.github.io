@@ -1,0 +1,27 @@
+{
+  "name": "photography-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobiasdelpozo/photography-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobiasdelpozo/photography-website/issues"
+  },
+  "homepage": "https://tobiasdelpozo.github.io/",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
