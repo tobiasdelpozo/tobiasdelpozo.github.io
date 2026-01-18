@@ -6,7 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "tsc && copyfiles index.html style.css photography/**/*.html images/**/* icons/**/* dist",
+    "build": "tsc && copyfiles index.html style.css photography/**/*.html images/**/* fonts/**/* writing/**/* CNAME dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
