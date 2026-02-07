@@ -6,7 +6,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "tsc && copyfiles index.html style.css photography/**/*.html images/**/* fonts/**/* writing/**/* CNAME dist",
+    "prebuild": "rm -rf dist && mkdir -p dist",
+    "build": "tsc && copyfiles index.html style.css photography/**/*.html images/**/* fonts/**/* writing/**/* CNAME dist && touch dist/.nojekyll",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
