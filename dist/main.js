@@ -28,7 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.classList.remove('active');
         }
     });
-    // Cleanup: Remove legacy dark mode if any
-    document.body.classList.remove('dark-mode');
-    localStorage.removeItem('theme');
 });

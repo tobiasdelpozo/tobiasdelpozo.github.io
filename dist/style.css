@@ -133,16 +133,11 @@ a.no-decoration {
 .col-100 { width: 100%; flex: 0 0 100%; }
 
 /* Spacing */
-.mb0 { margin-bottom: 0; }
 .mb1 { margin-bottom: 0.5rem; }
 .mb2 { margin-bottom: 1rem; }
 .mb3 { margin-bottom: 1.5rem; }
 .mb4 { margin-bottom: 3rem; }
-.mt1 { margin-top: 0.5rem; }
-.mt2 { margin-top: 1rem; }
 .mt4 { margin-top: 3rem; }
-.pa1 { padding: 0.5rem; }
-.pa2 { padding: 1rem; }
 
 main {
     padding-bottom: 4rem;
@@ -153,7 +148,6 @@ main {
 .white { color: var(--button-text); }
 .bg-light-gray { background-color: var(--header-bg); }
 .bg-dark-green { background-color: var(--accent-color); }
-.bg-white { background-color: var(--bg-color); }
 .moon-gray { color: var(--moon-gray); }
 
 /* Borders */
@@ -419,7 +413,8 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-color);
+    background-color: rgba(244, 241, 234, 0.9); /* Semi-transparent warm background */
+    backdrop-filter: blur(5px); /* Modern pop effect */
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -432,8 +427,11 @@ h1, h2, h3, h4 {
 }
 
 .lightbox-content {
-    max-width: 100%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
 /* --- New Technical Elements --- */
