@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tobiasdelpozo</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="container">
+
+    <header class="navbar bb b--black mb3">
+        <div class="navbar-section">
+            <h2>~ / <a href="../index.html" title="Home" class="no-decoration">Home</a> / Austin 2025</h2>
+        </div>
+        
+        <div class="navbar-section" style="margin-left: auto;">
+            <div class="status-box">
+                <span class="status-glyph">●</span> 
+                <span class="status-text">Status: Online</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="columns">
+            <div class="column col-30">
+                <div class="mb4">
+                    <table class="table meta-table">
+                        <thead class="black bg-light-gray ba b--black">
+                            <tr><th>Info</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="meta-location">Austin, USA</span>
+                                    <span class="meta-year">2025</span>
+                                </td>
+                            </tr>
+                            <tr><td>Pentax K1000</td></tr>
+                            <tr><td>Superia 400</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="column col-70">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="../images/austin/austin_01.jpg" alt="Austin 01"></div>
+                    <div class="gallery-item"><img src="../images/austin/austin_02.jpg" alt="Austin 02"></div>
+                    <div class="gallery-item"><img src="../images/austin/austin_03.jpg" alt="Austin 03"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="spec-sheet container">
+        <div class="spec-item">PAPER: <span class="spec-value">#F4F1EA</span></div>
+        <div class="spec-item">INK: <span class="spec-value">#1A1A1A</span></div>
+        <div class="spec-item">KERNING: <span class="spec-value">OPTICAL</span></div>
+        <div class="spec-item">FONT: <span class="spec-value">TX-02_RETINA</span></div>
+        <div class="spec-item">GRID: <span class="spec-value">12_COL_DYNAMIC</span></div>
+        <div class="spec-item" style="margin-left: auto;">CONTACT: <a href="mailto:contact@tobiasdelpozo.com" class="spec-value">contact@tobiasdelpozo.com</a></div>
+    </footer>
+
+    <script>
+        "use strict";
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox-overlay';
+            const img = document.createElement('img');
+            img.className = 'lightbox-content';
+            lightbox.appendChild(img);
+            document.body.appendChild(lightbox);
+            document.addEventListener('click', (e) => {
+                const target = e.target;
+                if (target.tagName === 'IMG' && target.closest('.gallery-item') && !target.closest('a')) {
+                    e.preventDefault();
+                    const src = target.src;
+                    img.src = src;
+                    lightbox.classList.add('active');
+                }
+            });
+            lightbox.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
